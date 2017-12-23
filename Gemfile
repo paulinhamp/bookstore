@@ -12,6 +12,9 @@ gem 'rails', '~> 5.1.4'
 gem 'pg' 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# Swagger Docs
+gem 'swagger-docs'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -24,6 +27,17 @@ gem 'puma', '~> 3.7'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
+# Use to serve custom JSON
+gem "active_model_serializers"
+# Redis
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
+
+# Intelligent search using elasticsearch
+gem 'searchkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,7 +53,7 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails', '~> 4.0'
+  gem "factory_bot_rails", "~> 4.0"  
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
   gem 'database_cleaner'
