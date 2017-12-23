@@ -9,7 +9,14 @@ module Domain
 
         def call
           @book.update_attributes!(@attributes)
+          invalidate_cache
           @book
+        end
+
+        private
+        
+        def invalidate_cache
+          InvalidateCacheWorker.perform_async
         end
       end
     end

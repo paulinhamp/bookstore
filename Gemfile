@@ -36,6 +36,9 @@ gem 'redis-namespace'
 gem 'redis-rails'
 gem 'redis-rack-cache'
 
+# Sidekiq
+gem 'sidekiq'
+
 # Intelligent search using elasticsearch
 gem 'searchkick'
 
@@ -56,7 +59,9 @@ group :test do
   gem "factory_bot_rails", "~> 4.0"  
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
+  gem 'mock_redis'
   gem 'database_cleaner'
+  gem 'simplecov'  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

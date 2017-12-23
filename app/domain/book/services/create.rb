@@ -8,7 +8,14 @@ module Domain
 
         def call
           @book.save!
+          invalidate_cache
           @book
+        end
+
+        private
+
+        def invalidate_cache
+          InvalidateCacheWorker.perform_async
         end
       end
     end

@@ -4,6 +4,10 @@ describe Domain::Book::Queries::Search, type: :queries do
   let!(:book1) { create(:book) }
   let!(:book2) { create(:book) }
 
+  before {
+    allow(::Domain::Redis::RedisWrapper).to receive(:redis_client).and_return(::Support::Mocks::Redis.new)
+  }
+
   describe '.call' do
     context 'when no query' do
       it 'should return all books' do

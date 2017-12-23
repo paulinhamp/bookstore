@@ -3,6 +3,10 @@ require 'rails_helper'
 describe Domain::Book::Queries::Get, type: :queries do
   let(:book) { create(:book) }
 
+  before {
+    allow(::Domain::Redis::RedisWrapper).to receive(:redis_client).and_return(::Support::Mocks::Redis.new)
+  }
+
   describe '.call' do
     
     context 'when book_id is invalid' do

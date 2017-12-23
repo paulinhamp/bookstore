@@ -9,6 +9,13 @@ module Domain
 
         def call
           ::Book.find(@book_id).destroy
+          invalidate_cache
+        end
+
+        private
+        
+        def invalidate_cache
+          InvalidateCacheWorker.perform_async
         end
 
         def validate_params

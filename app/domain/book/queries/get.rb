@@ -7,11 +7,14 @@ module Domain
         end
 
         def call
-          ::Book.find(@book_id)
+          book = books_from_cache.select { |book| book.id == @book_id }.first
+
+          return ::Book.find(@book_id) if book.nil?
+          book
         end
 
-        def validate_params
-          fail ArgumentError, 'Parameter "book_id" is required!' if @book_id.nil?
+        def books_from_cache
+          @books_from_cache ||= ::Domain::Book::Services::Cache::GetAll.new.call
         end
       end
     end

@@ -3,6 +3,11 @@ require 'rails_helper'
 describe Domain::Book::Services::Destroy, type: :services do
   let(:book) { create(:book) }
 
+  before {
+    allow(::Domain::Redis::RedisWrapper).to receive(:redis_client).and_return(::Support::Mocks::Redis.new)
+    allow(InvalidateCacheWorker).to receive(:perform_async)
+  }
+  
   describe '.call' do
     
     context 'when book_id is invalid' do

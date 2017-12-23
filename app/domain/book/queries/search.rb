@@ -7,8 +7,14 @@ module Domain
         end
 
         def call
-          return ::Book.all if @term.blank?
+          return all_books if @term.blank?
           ::Book.search(@term, fields: [:title, :synopsis])
+        end
+
+        private
+
+        def all_books
+          ::Domain::Book::Services::Cache::GetAll.new.call
         end
       end
     end
