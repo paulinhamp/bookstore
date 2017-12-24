@@ -62,6 +62,7 @@ group :test do
   gem 'mock_redis'
   gem 'database_cleaner'
   gem 'simplecov'  
+  gem 'codeclimate-test-reporter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

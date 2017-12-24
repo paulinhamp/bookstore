@@ -48,6 +48,8 @@ GEM
     byebug (9.1.0)
     case_transform (0.2)
       activesupport
+    codeclimate-test-reporter (1.0.7)
+      simplecov
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
     crass (1.0.3)
@@ -221,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   byebug
+  codeclimate-test-reporter
   database_cleaner
   factory_bot_rails (~> 4.0)
   faker
