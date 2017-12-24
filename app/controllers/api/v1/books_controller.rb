@@ -35,12 +35,12 @@ class Api::V1::BooksController < ApplicationController
   #:nocov:
   swagger_api :create do
     summary "Creates a new Book"
-    param :form, :title, :string, :required, "Title"
-    param :form, :pages, :integer, "Pages"
-    param :form, :synopsis, :string, "Synopsis"
-    param :form, :category_id, :integer, :required, "Category Id"
-    param :form, :publisher_id, :integer, :required, "Publisher Id"
-    param :form, :author_ids, :array, :required, "Author Ids"
+    param :form, :title,         :string,  :required, "Title"
+    param :form, :pages,         :integer, :optional, "Pages"
+    param :form, :synopsis,      :string,  :optional, "Synopsis"
+    param :form, :category_id,   :integer, :required, "Category Id"
+    param :form, :publisher_id,  :integer, :required, "Publisher Id"
+    param :form, 'author_ids[]', :array,   :required, "Author Ids"
     response :not_acceptable
   end
   #:nocov:
@@ -55,12 +55,12 @@ class Api::V1::BooksController < ApplicationController
   #:nocov:
   swagger_api :update do
     summary "Updates an existing User"
-    param :form, :title, :string, :required, "Title"
-    param :form, :pages, :integer, "Pages"
-    param :form, :synopsis, :string, "Synopsis"
-    param :form, :category_id, :integer, :required, "Category Id"
-    param :form, :publisher_id, :integer, :required, "Publisher Id"
-    param :form, :author_id, :integer, :required, "Author Id"
+    param :form, :title,         :string,  :required, "Title"
+    param :form, :pages,         :integer, :optional, "Pages"
+    param :form, :synopsis,      :string,  :optional, "Synopsis"
+    param :form, :category_id,   :integer, :required, "Category Id"
+    param :form, :publisher_id,  :integer, :required, "Publisher Id"
+    param :form, 'author_ids[]', :array,   :required, "Author Ids"
     response :not_found
     response :not_acceptable
   end

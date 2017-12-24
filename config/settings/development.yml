@@ -1,0 +1,5 @@
+redis:
+  url: redis://localhost:6379/0/cache
+
+elasticsearch:
+  url: http://localhost:9200

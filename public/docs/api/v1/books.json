@@ -5,6 +5,190 @@
   "resourcePath": "books",
   "apis": [
     {
+      "path": "/api/v1/books",
+      "operations": [
+        {
+          "summary": "Fetches all books with query or not",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "q",
+              "type": "string",
+              "description": "Query String",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "nickname": "Api::V1::Books#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/books",
+      "operations": [
+        {
+          "summary": "Creates a new Book",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "pages",
+              "type": "integer",
+              "description": "Pages",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "synopsis",
+              "type": "string",
+              "description": "Synopsis",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "category_id",
+              "type": "integer",
+              "description": "Category Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "publisher_id",
+              "type": "integer",
+              "description": "Publisher Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "author_ids[]",
+              "type": "array",
+              "description": "Author Ids",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Api::V1::Books#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/books/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single Book item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "User",
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V1::Books#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/books/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing User",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "pages",
+              "type": "integer",
+              "description": "Pages",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "synopsis",
+              "type": "string",
+              "description": "Synopsis",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "category_id",
+              "type": "integer",
+              "description": "Category Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "publisher_id",
+              "type": "integer",
+              "description": "Publisher Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "author_ids[]",
+              "type": "array",
+              "description": "Author Ids",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Api::V1::Books#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
       "path": "/api/v1/books/{id}",
       "operations": [
         {

@@ -28,6 +28,9 @@ gem 'swagger-docs'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# Config
+gem 'config'
+
 # Use to serve custom JSON
 gem "active_model_serializers"
 # Redis

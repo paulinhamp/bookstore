@@ -4,7 +4,7 @@
   "basePath": "",
   "apis": [
     {
-      "path": "/api/v1/books.{format}",
+      "path": "./../api/v1/books.{format}",
       "description": "Book Management"
     }
   ],
