@@ -3,27 +3,27 @@ class Api::V1::BooksController < ApplicationController
   swagger_controller :books, "Book Management"  
 
   # GET /api/v1/books
-  # :nocov:
+  #:nocov:
   swagger_api :index do
     summary  "Fetches all books with query or not"
     param    :query, :q, :string, :optional, "Query String"
     response :ok
   end
-  # :nocov:
+  #:nocov:
   def index
     books = ::Domain::Book::Presenters::Search.new(params).call
     render json: books 
   end
 
   #GET /api/v1/books/:book_id:
-  # :nocov:
+  #:nocov:
   swagger_api :show do
     summary "Fetches a single Book item"
     param :path, :id, :integer, :optional, "Book Id"
     response :ok, "Success", :User
     response :not_found
   end
-  # :nocov:
+  #:nocov:
   def show
     book = ::Domain::Book::Presenters::Show.new(params).call
     render json: book
@@ -32,7 +32,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   #POST /api/v1/books
-  # :nocov:
+  #:nocov:
   swagger_api :create do
     summary "Creates a new Book"
     param :form, :title, :string, :required, "Title"
@@ -43,7 +43,7 @@ class Api::V1::BooksController < ApplicationController
     param :form, :author_ids, :array, :required, "Author Ids"
     response :not_acceptable
   end
-  # :nocov:
+  #:nocov:
   def create
     book = ::Domain::Book::UseCases::Create.new(book_params).call
     render json: book, status: :created
@@ -52,7 +52,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   #PUT/PATCH /api/v1/books/:book_id:
-  # :nocov:
+  #:nocov:
   swagger_api :update do
     summary "Updates an existing User"
     param :form, :title, :string, :required, "Title"
@@ -64,7 +64,7 @@ class Api::V1::BooksController < ApplicationController
     response :not_found
     response :not_acceptable
   end
-  # :nocov:
+  #:nocov:
   def update
     book = ::Domain::Book::UseCases::Update.new(book_params).call
     render json: book, status: :ok
@@ -73,14 +73,14 @@ class Api::V1::BooksController < ApplicationController
   end
   
   # DELETE /api/v1/books/:book_id:
-  # :nocov:
+  #:nocov:
   swagger_api :destroy do
     summary  "Deletes an existing book"
     param    :path, :id, :integer, :required, "Book ID"
     response :not_found
     response :no_content
   end
-  # :nocov:
+  #:nocov:
   def destroy
     ::Domain::Book::UseCases::Destroy.new(params).call
     head :no_content
