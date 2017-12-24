@@ -9,6 +9,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'support/mocks/redis'
+require 'support/json_helpers'
 require 'database_cleaner'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -40,6 +41,7 @@ end
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include Support::JsonHelpers, type: :controller
   
   config.before(:suite) do    
     Searchkick.disable_callbacks

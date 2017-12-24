@@ -11,7 +11,10 @@ describe Domain::Book::UseCases::Create, type: :usecases do
       }
 
       it 'should call create' do
-        new_book = described_class.new(book.as_json).call
+        params = book.as_json
+        params['author_ids'] = [ create(:author).id ]
+
+        new_book = described_class.new(params).call
 
         expect(new_book).to be_persisted
         expect(new_book.title).to eq(book.title)

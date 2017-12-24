@@ -3,7 +3,10 @@ class Book < ApplicationRecord
   belongs_to :category
   belongs_to :publisher
 
-  validates :title, presence: true
+  validates :title,     presence: true
+  validates :authors,   presence: true
+  validates :category,  presence: true
+  validates :publisher, presence: true
 
   searchkick
 end
