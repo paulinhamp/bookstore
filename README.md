@@ -67,10 +67,13 @@ bundle exec rails s
 | ------------------------------------|-----------|------------------------ 
 |   Show Swagger Docs                 |  `GET`    | /apidocs
 |   List books                        |  `GET`    | /api/v1/books
-|   List books by keyword             |  `GET`    | /api/v1/books?q=<query>
+|   List books by query               |  `GET`    | /api/v1/books?q=<query>
 |   Create book                       |  `POST`   | /api/v1/books
 |   Show Book                         |  `GET`    | /api/v1/books/:id
 |   Update book                       |  `PUT`    | /api/v1/books/:id
 |   Delete book                       |  `DELETE` | /api/v1/books/:id
+|   List categories                   |  `GET`    | /api/v1/categories
+|   List authors                      |  `GET`    | /api/v1/authors
+|   List publi                        |  `GET`    | /api/v1/publishers
 
 Made with :heart: by Ana Paula Melo

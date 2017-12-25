@@ -133,7 +133,7 @@
               "name": "title",
               "type": "string",
               "description": "Title",
-              "required": true
+              "required": false
             },
             {
               "paramType": "form",
@@ -154,21 +154,21 @@
               "name": "category_id",
               "type": "integer",
               "description": "Category Id",
-              "required": true
+              "required": false
             },
             {
               "paramType": "form",
               "name": "publisher_id",
               "type": "integer",
               "description": "Publisher Id",
-              "required": true
+              "required": false
             },
             {
               "paramType": "form",
               "name": "author_ids[]",
               "type": "array",
               "description": "Author Ids",
-              "required": true
+              "required": false
             }
           ],
           "responseMessages": [
