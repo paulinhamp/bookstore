@@ -1,7 +1,8 @@
 Config.setup do |config|
   # Name of the constant exposing loaded settings
+  #:nocov:
   config.const_name = 'Settings'
-
+  #:nocov:
   # Ability to remove elements of the array set in earlier loaded settings file. For example value: '--'.
   #
   # config.knockout_prefix = nil

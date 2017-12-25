@@ -12,7 +12,7 @@ class Api::V1::BooksController < ApplicationController
   #:nocov:
   def index
     books = ::Domain::Book::Presenters::Search.new(params).call
-    render json: books 
+    render json: books
   end
 
   #GET /api/v1/books/:book_id:

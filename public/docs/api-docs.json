@@ -1,11 +1,23 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "",
+  "basePath": "/docs",
   "apis": [
     {
-      "path": "./../api/v1/books.{format}",
+      "path": "/api/v1/books.{format}",
       "description": "Book Management"
+    },
+    {
+      "path": "/api/v1/categories.{format}",
+      "description": "Category Management"
+    },
+    {
+      "path": "/api/v1/publishers.{format}",
+      "description": "Publisher Management"
+    },
+    {
+      "path": "/api/v1/authors.{format}",
+      "description": "Author Management"
     }
   ],
   "authorizations": null

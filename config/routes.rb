@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :books
+      resources :categories, only: [:index]
+      resources :publishers, only: [:index]
+      resources :authors,    only: [:index]
     end
   end
 end

@@ -1,0 +1,26 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/docs",
+  "resourcePath": "categories",
+  "apis": [
+    {
+      "path": "/api/v1/categories",
+      "operations": [
+        {
+          "summary": "Fetches all categories",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            }
+          ],
+          "nickname": "Api::V1::Categories#index",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
