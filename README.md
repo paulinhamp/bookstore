@@ -74,6 +74,6 @@ bundle exec rails s
 |   Delete book                       |  `DELETE` | /api/v1/books/:id
 |   List categories                   |  `GET`    | /api/v1/categories
 |   List authors                      |  `GET`    | /api/v1/authors
-|   List publi                        |  `GET`    | /api/v1/publishers
+|   List publishers                   |  `GET`    | /api/v1/publishers
 
 Made with :heart: by Ana Paula Melo
