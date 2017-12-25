@@ -19,7 +19,7 @@ class Api::V1::BooksController < ApplicationController
   #:nocov:
   swagger_api :show do
     summary "Fetches a single Book item"
-    param :path, :id, :integer, :optional, "Book Id"
+    param :path, :id, :integer, :required, "Book Id"
     response :ok, "Success", :User
     response :not_found
   end
@@ -55,6 +55,7 @@ class Api::V1::BooksController < ApplicationController
   #:nocov:
   swagger_api :update do
     summary "Updates an existing User"
+    param :path, :id,            :integer, :required, "Book Id"
     param :form, :title,         :string,  :optional, "Title"
     param :form, :pages,         :integer, :optional, "Pages"
     param :form, :synopsis,      :string,  :optional, "Synopsis"
