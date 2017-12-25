@@ -17,6 +17,7 @@ Bookstore is a simple API using the DDD (Domain Driven Development), using tecno
 ```bash
 git clone git@github.com:paulinhamp/bookstore.git
 cd bookstore
+git submodule init
 git submodule update --recursive --remote
 ```
 ## Settings
