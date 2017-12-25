@@ -2,7 +2,7 @@
 
 # Bookstore
 
-Bookstore is a simple API using the DDD (Domain Driven Development), using tecnologies like Sidekiq and ElasticSearch.
+Bookstore is a simple API using the DDD (Domain Driven Design), using tecnologies like Sidekiq and ElasticSearch.
 
 ## Requirements
 - Ruby 2.3.4
